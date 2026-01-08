@@ -1,4 +1,4 @@
-#ML Project ideas in Satellite Control Systems
+##ML Project ideas in Satellite Control Systems
 
 - **Machine Learning Techniques for Onboard Anomaly Detection in Satellite Telemetry**  
   https://ieeexplore.ieee.org/abstract/document/10396403)
