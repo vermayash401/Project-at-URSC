@@ -7,20 +7,22 @@
 
 ## Build libaec
 
-Open "x64 Native Tools Command Prompt for VS 2022"
+Open "x64 Native Tools Command Prompt for VS 2022" and pate following line by line:
 
+```bash
 cd libaec-1.1.5
 mkdir build
 cd build
 cmake -G "NMake Makefiles" ..
 nmake
+```
 
 Executable will be located in:
 build/src/graec.exe
 
 ## Compress
 
-graec.exe input_delta.bin output.aec
+graec.exe "path/input_delta.bin" output.aec
 
 ## Decompress
 
