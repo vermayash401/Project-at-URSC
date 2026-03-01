@@ -73,7 +73,7 @@ def frames_to_delta_ml(frames, out_bin, compute_window_features):
 
                 #now for next empty window set up previous window 
                 prev_window=window
-                window = []
+                window=[]
 
             #for first frame/window
             if prev_frame is None:
@@ -115,4 +115,5 @@ def frames_to_delta_ml(frames, out_bin, compute_window_features):
 
             #master_refs is a list of frames and that keeps building until 32 frames are filled. so whole previous window is held in memory
             master_refs[slot]=current_frame_int.copy()
+
             frame_index+=1
