@@ -218,7 +218,7 @@ def generate_telemetry(days, max_changes,frame_mode,mode="Sequential", txt_outpu
 
 def mixed_telemetry (days=0.05, max_changes=[1, 2, 4, 8, 16, 32, 64],txt_output="spacecraft_framesX.txt"):
 
-    each_regime_data_duration_in_days=days/(len(max_changes)+2)
+    each_regime_data_duration_in_days=days/(2*(len(max_changes))+1)
     frames_same = generate_seq_frames(each_regime_data_duration_in_days,0,[0,10,0])
     frames_random = generate_seq_frames(each_regime_data_duration_in_days,0,[0,0,10])# here max changes doesnt matter
     frames_related=[]
@@ -230,3 +230,4 @@ def mixed_telemetry (days=0.05, max_changes=[1, 2, 4, 8, 16, 32, 64],txt_output=
     frames=frames_same+frames_related+frames_random
     save_frames_to_txt(frames, path=txt_output)
     return frames
+
