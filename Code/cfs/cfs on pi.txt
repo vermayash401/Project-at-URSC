@@ -1,0 +1,20 @@
+mkdir src             
+cd src   
+git clone https://www.github.com/nasa/cFS.git   
+cd cFS                                          
+git submodule init                              
+git submodule update
+cd ..   
+git clone https://github.com/mbr4477/install-cfs-rpi.git 
+source ./install-cfs-rpi/install-cfs-rpi.sh  
+cd     
+cd src
+ls
+cd cFS
+cp -r ../cFE cFE
+ls
+cp cFE/cmake/Makefile.sample Makefile     
+cp -r cFE/cmake/sample_defs sample_defs
+make SIMULATION=native prep 
+make
+make install 

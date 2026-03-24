@@ -1,0 +1,36 @@
+sudo apt-get update -y 
+sudo apt-get install -y build-essential
+sudo apt-get install -y cmake
+sudo apt-get install -y libexpat1-dev
+sudo apt-get install -y liblua5.3-dev
+sudo apt-get install -y libjson-c-dev
+sudo apt-get install -y python3-dev
+sudo apt-get install -y python3-pip
+sudo apt-get install -y python3-tk
+sudo apt-get install -y python3-venv
+sudo apt install -y default-jre
+
+mkdir your_project
+cd your_project
+python3 -m venv env
+source env/bin/activate
+
+git clone https://github.com/cfs-tools/cfs-basecamp.git
+
+cd ~/cfsbasecamp/cfs-basecamp/cfe-eds-framework
+make SIMULATION=native prep
+make topicids
+make
+make install
+
+cd ~/cfsbasecamp/cfs-basecamp/gnd-sys/app
+. ./setvars.sh
+python3 basecamp.py
+
+gui-remote- upd and local
+
+nano basecamp.ini
+then change cfs ip add to pi ip address, ctrl+o, enter, ctril+x
+change vv to bridged network mode
+change ground ip address too.
+ena tlm- new line will be printed on pi and ground- connection est
